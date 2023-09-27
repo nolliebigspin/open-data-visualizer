@@ -1,0 +1,11 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:prettier/recommended", "plugin:mdx/recommended", "plugin:jsx-a11y/recommended"],
+  "plugins": ["jsx-a11y", "prettier"],
+  "settings": {
+    "mdx/code-blocks": true
+  },
+  "ignorePatterns": [".next/", "node_modules/"],
+  "rules": {
+    "prettier/prettier": "error"
+  }
+}

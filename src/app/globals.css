@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.hyphens-soso {
+  overflow-wrap: anywhere;
+  hyphens: auto;
+}
