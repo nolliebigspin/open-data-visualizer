@@ -25,7 +25,7 @@ const DatasetViewer = ({ datasetMeta }: DatasetViewerProps) => {
 
   const applyTransformers = (
     data: Array<Datapoint>,
-    transformers?: Transformer | null
+    transformers?: Transformer | null,
   ): Array<Datapoint> => {
     if (!transformers) return data;
     for (let row = 0; row < data.length; row += 1) {
@@ -62,7 +62,7 @@ const DatasetViewer = ({ datasetMeta }: DatasetViewerProps) => {
       const csvData = await res.text();
       const data = applyTransformers(
         parseCSV(csvData),
-        datasetMeta.transformers
+        datasetMeta.transformers,
       );
 
       views?.setCurrent(datasetMeta.views[0]);
@@ -84,7 +84,7 @@ const DatasetViewer = ({ datasetMeta }: DatasetViewerProps) => {
                 views.current.rangeX
                   ? views.data?.slice(
                       views?.current.rangeX[0],
-                      views?.current.rangeX[1]
+                      views?.current.rangeX[1],
                     )
                   : views.data
               }
@@ -111,10 +111,10 @@ const DatasetViewer = ({ datasetMeta }: DatasetViewerProps) => {
               // TODO: Better type definition
               marker={views.data?.map((item) => ({
                 longitude: Number(
-                  item.Longitude ? item.Longitude : item.Längengrad
+                  item.Longitude ? item.Longitude : item.Längengrad,
                 ),
                 latitude: Number(
-                  item.Latitude ? item.Latitude : item.Breitengrad
+                  item.Latitude ? item.Latitude : item.Breitengrad,
                 ),
               }))}
             />
